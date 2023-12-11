@@ -1025,7 +1025,7 @@ namespace WebBanDienThoai.Controllers
         public double StatisticBill()
         {
             int bill = 0;
-            var listBill = db.DONDATHANGs;
+            var listBill = db.DONDATHANGs.Where(row => row.TinhTrang == "Đã giao" && row.DaThanhToan == true);
             if (listBill.Count() > 0)
             {
                 bill = listBill.Count();
